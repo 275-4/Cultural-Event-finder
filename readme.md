@@ -35,80 +35,13 @@ The app retrieves cultural event data by making requests to the **Ticketmaster A
 - **Ticketmaster API**: To fetch event data based on location and date filters.
 - **CSS/SCSS**: For styling the app to make it visually appealing and responsive.
 
-## Code Example 📜
+## Running the App 🏃‍♂️
 
-Here’s a code snippet showing how to integrate the **Ticketmaster API** and retrieve events based on a specific location and date range.
+To run the **Cultural Event Finder** web app locally, follow these steps:
 
-### 1. **Fetching Event Data from Ticketmaster API** 🚀
+### 1. **Clone the repository:**
 
-```javascript
-import React, { useState, useEffect } from 'react';
+Open a terminal or command prompt and run the following command to clone the repository:
 
-const EventFetcher = ({ location, radius, startDate, endDate }) => {
-  const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?latlong=${location.lat},${location.lng}&radius=${radius}&startDateTime=${startDate}&endDateTime=${endDate}&apikey=YOUR_TICKETMASTER_API_KEY`);
-        const data = await response.json();
-        setEvents(data._embedded.events);
-      } catch (error) {
-        console.error('Error fetching events:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (location) {
-      fetchEvents();
-    }
-  }, [location, radius, startDate, endDate]);
-
-  if (loading) return <div>Loading...</div>;
-
-  return (
-    <div>
-      {events.length > 0 ? (
-        <ul>
-          {events.map((event) => (
-            <li key={event.id}>
-              <h3>{event.name}</h3>
-              <p>{event.dates.start.localDate} - {event._embedded.venues[0].name}</p>
-              <a href={event.url} target="_blank" rel="noopener noreferrer">View Event</a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No events found.</p>
-      )}
-    </div>
-  );
-};
-
-export default EventFetcher;
-
-
-Running the App 🏃‍♂️
-To run the app locally, follow these steps:
-
-Clone the repository:
-
-bash
-Copy code
+```bash
 git clone https://github.com/your-repository-link.git
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the development server:
-
-bash
-Copy code
-npm start
-Open your browser and visit http://localhost:3000 to view the app in action.
-
-
