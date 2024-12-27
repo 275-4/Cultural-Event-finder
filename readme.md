@@ -37,11 +37,6 @@ The app retrieves cultural event data by making requests to the **Ticketmaster A
 
 ## Running the App 🏃‍♂️
 
-To run the **Cultural Event Finder** web app locally, follow these steps:
+To run the **Cultural Event Finder** web app, click on given link:
+https://iridescent-clafoutis-ada50f.netlify.app/
 
-### 1. **Clone the repository:**
-
-Open a terminal or command prompt and run the following command to clone the repository:
-
-```bash
-git clone https://github.com/your-repository-link.git
