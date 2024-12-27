@@ -89,3 +89,26 @@ const EventFetcher = ({ location, radius, startDate, endDate }) => {
 };
 
 export default EventFetcher;
+
+
+Running the App 🏃‍♂️
+To run the app locally, follow these steps:
+
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/your-repository-link.git
+Install dependencies:
+
+bash
+Copy code
+npm install
+Start the development server:
+
+bash
+Copy code
+npm start
+Open your browser and visit http://localhost:3000 to view the app in action.
+
+
