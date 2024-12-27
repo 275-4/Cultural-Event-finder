@@ -1,0 +1,21 @@
+
+                                                STRUCTURE
+                    
+                                         ___________App____________
+                                        /                          \
+                                       /                            \        
+                             __DataVizContainer____               SearchForm
+                            /   (get API data)     \             (get user input)
+                           /                        \
+                          /                          \                         
+                    ____Map____                     Cards                                
+                    /    |     \                      |                            
+                   /     |      \                     |                           
+        CircleWrapper  Markers   LocationMarker    MediaCard                      
+            |            |        (get coords)                    
+          Circle         |                                             
+                       (Marker)                                         
+                         |                                             
+                       (Popup)                                         
+                         |
+                     EvenuePopup
